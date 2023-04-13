@@ -25,7 +25,7 @@ export const register = async (request: FastifyRequest, reply: FastifyReply) => 
                 message: error.message
             });
         }
-        return reply.status(500).send();
+        throw error;
     }
 
     return reply.status(201).send();
